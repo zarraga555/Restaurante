@@ -83,7 +83,7 @@ form.user .btn-user {
     background-color: #4e73df;
     border-color: #4e73df;
 }
-@media(min-width:  320px){
+@media(min-width:  320px) and (max-width: 760px){
     .container-header {
         width: 100%;
         max-width: 1220px;
