@@ -57,7 +57,7 @@
   </div>
 
   <div aria-live="polite" aria-atomic="true">
-    <div class="toast" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
+    <div class="toast" id="toast" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
       <div class="toast-body">
         Complete los campos vacios.
       </div>
@@ -87,7 +87,7 @@ if (isset($iniciar)) {
   $fila = $ejecutar->fetch_row();
 
   if (empty($user) || empty($pass)) {
-    echo "<script>$('.toast').toast('show');</script>";
+    echo "<script>$('#toast').toast('show');</script>";
   } else if ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Administrador") {
     $_SESSION['user']=$user;
     header('location:admin.php');
