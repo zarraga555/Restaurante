@@ -57,7 +57,7 @@
   </div>
 
   <div aria-live="polite" aria-atomic="true">
-    <div class="toast" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem;">
+    <div class="toast" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
       <div class="toast-body">
         Complete los campos vacios.
       </div>
@@ -65,7 +65,7 @@
   </div>
 
   <div aria-live="polite" aria-atomic="true">
-    <div class="toast" id="toastError" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem;">
+    <div class="toast" id="toastError" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
       <div class="toast-body">
         Usuario o Contraseña incorrecta.
       </div>
@@ -76,6 +76,7 @@
 </html>
 <?php
 include('config/config.php');
+session_start();
 $user = $_POST['txtusario'];
 $pass = $_POST['txtpassword'];
 $iniciar = $_POST['btniniciar'];
@@ -88,10 +89,13 @@ if (isset($iniciar)) {
   if (empty($user) || empty($pass)) {
     echo "<script>$('.toast').toast('show');</script>";
   } else if ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Administrador") {
-    header('location:administrador.php');
+    $_SESSION['user']=$user;
+    header('location:admin.php');
   } elseif ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Cajero") {
+    $_SESSION['user']=$user;
     header('location:cajero.php');
   } elseif ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Contador") {
+    $_SESSION['user']=$user;
     header('location:contador.php');
   } else {
     echo "<script>('#toastError').toast('show');</script>";
