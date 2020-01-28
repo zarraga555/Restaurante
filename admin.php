@@ -1,19 +1,9 @@
-<?php
-    session_start();
-    if(empty($_SESSION['user'])){
-        header('location:index.php');
-    }
-?>
+
 <?php require_once "view/superior.php"?>
 
 <div>
-    <?php
-        echo "Bienvido $_SESSION[user]";
-    ?>
-    <form action="admin.php" method="post">
-
-    <button name="txtSalir">salir</button>
-    </form>
+    
+hola
     
 </div>
 

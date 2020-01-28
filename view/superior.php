@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['user'])) {
+  header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,20 +24,30 @@
 
   <div class="wrapper">
     <div class="slid">
-    <img src="img/favicon-96x96.png" alt="">
-        <ul class="sidebar"> 
-            
-            <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-user"></i>Usuarios</a></li>
-            <li><a href="#"><i class="fas fa-address-card"></i>Empleados</a></li>
-            <li><a href="#"><i class="fas fa-boxes"></i>Almacen</a></li>
-            <li><a href="#"><i class="fas fa-parachute-box"></i>Proveedores</a></li>
-        </ul> 
+      <img src="img/favicon-96x96.png" alt="">
+      <ul class="sidebar">
+
+        <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-user"></i>Usuarios</a></li>
+        <li><a href="#"><i class="fas fa-address-card"></i>Empleados</a></li>
+        <li><a href="#"><i class="fas fa-boxes"></i>Almacen</a></li>
+        <li><a href="#"><i class="fas fa-parachute-box"></i>Proveedores</a></li>
+      </ul>
     </div>
     <div class="main_content">
-        <nav class="header">Welcome!! Have a nice day.</nav>  
-        <div class="info">
-   
-      </div>
-    
+      <nav class="header">
+        <ul class="navTop">
+          <li><span><?php
+                    echo " $_SESSION[user]";
+                    ?></span></li>
+          <div class="separador"></div>
+          <li>
+            <form action="admin.php" method="post">
+              <button name="txtSalir" class="btn btn-primary btn-user btn-block" >Cerrar Session</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+      <div class="info">
 
+      </div>
