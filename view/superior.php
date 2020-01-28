@@ -5,7 +5,7 @@ if (empty($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -27,8 +27,8 @@ if (empty($_SESSION['user'])) {
       <img src="img/favicon-96x96.png" alt="">
       <ul class="sidebar">
 
-        <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-        <li><a href="#"><i class="fas fa-user"></i>Usuarios</a></li>
+        <li><a href="admin.php"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="user.php"><i class="fas fa-user"></i>Usuarios</a></li>
         <li><a href="#"><i class="fas fa-address-card"></i>Empleados</a></li>
         <li><a href="#"><i class="fas fa-boxes"></i>Almacen</a></li>
         <li><a href="#"><i class="fas fa-parachute-box"></i>Proveedores</a></li>
@@ -48,6 +48,7 @@ if (empty($_SESSION['user'])) {
           </li>
         </ul>
       </nav>
+      <!--Esta etiqueta es posible que me la lleve a otro lado-->
       <div class="info">
 
-      </div>
+      
