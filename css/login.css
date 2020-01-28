@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +6,36 @@
     text-decoration: none;
     -webkit-transition: all 300ms;
     transition: all 300ms;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
+
 .container-header {
     width: 100%;
 }
+
 .container-logo-title {
     display: flex;
     margin-top: 40px;
     margin-left: 60px;
 }
+
 .container-logo-title img {
     width: 80px;
     height: 80px;
 }
+
 .p-5 {
     padding: 3rem!important;
 }
-.text-title{
+
+.text-title {
     color: #3a3b45!important;
     font-size: 1.9rem;
     margin-bottom: 2rem!important;
     line-height: 1.4;
 }
+
 form.user .form-control-user {
     font-size: .9rem;
     border-radius: 10rem;
@@ -46,7 +55,7 @@ form.user .form-control-user {
     background-clip: padding-box;
     border: 1px solid #d1d3e2;
     border-radius: .35rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 form.user .btn-user {
@@ -71,19 +80,21 @@ form.user .btn-user {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .btn-block {
     display: block;
     width: 100%;
 }
+
 .btn-primary {
     color: #fff;
     background-color: #4e73df;
     border-color: #4e73df;
 }
-@media(min-width:  320px) and (max-width: 760px){
+
+@media(min-width : 320px) and (max-width: 760px) {
     .container-header {
         width: 100%;
         max-width: 1220px;

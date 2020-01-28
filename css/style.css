@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body{
+   background-color: #fff;
+   font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+.slid{
+    background: #4e73df ;
+    min-height: 100vh;
+}
+.slid img{
+    display:block;
+    margin:auto;
+    padding-top: 35px;
+}
+.sidebar{
+  width: 224px!important;
+  background: #4e73df ;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  
+}
+
+.sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+ul li{
+  position: relative;
+  padding: 1rem;
+}    
+
+ul li a{
+    text-align: left;
+    padding: 1rem;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    color: #fff;
+    display: block;
+}
+
+ul li a .fas{
+  width: 35px;
+}
+
+ 
+.sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+
+.wrapper .main_content{
+
+  flex: 1 0 auto;
+}
+
+.wrapper .main_content .header{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    margin-bottom: 1.5rem!important;
+    height: 4.375rem;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+
+footer.sticky-footer {
+    padding: 2rem 0;
+    flex-shrink: 0;
+    background-color: #fff!important;
+    display: block;
+}
+.container, .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: auto!important;
+    margin-top: auto!important;
+    max-width: 1140px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: .8rem;
+    text-align: center!important;
+    margin-bottom: auto!important;
+    margin-top: auto!important;
+}
