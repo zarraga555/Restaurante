@@ -63,6 +63,7 @@ body{
     padding-top: 0px;
     color: #fff;
     display: block;
+    text-decoration: none;
 }
 
 .slid ul li a .fas{
@@ -119,6 +120,21 @@ body{
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+.btnAcciones {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
 
 .btn-user {
     font-size: .9rem;
@@ -162,7 +178,11 @@ body{
   line-height: 25px;
 }
 
-.wrapper .main_content .info div{
+.wrapper .main_content .info .title-container{
+  margin-bottom: 20px;
+}
+
+.buton-container .btn{
   margin-bottom: 20px;
 }
 
