@@ -10,7 +10,7 @@
             Agregar Proveedor
         </button>
 
-        <!-- Modal Agregar datos-->
+        <!-- INICIO DE MODAL DE AGREGACION DE DATOS Modal Agregar datos-->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -50,8 +50,15 @@
             </div>
         </div>
     </div>
+    <!--FINAL DE MODAL DE MODIFICACION -->
+<?php 
+            $valor = $_POST['id'];
+            include('config/config.php');
+            $sql = "UPDATE nombre, direccion, telefono FROM proveedores WHERE ciNit = $dvalor";
+            
 
-    <!-- Modal Modificar datos-->
+?>
+    <!-- INICIO DE MODAL DE MOFICACION DE DATOS  Modal Modificar datos-->
     <div class="modal fade" id="exampleModalM" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -91,6 +98,10 @@
         </div>
     </div>
 
+    <!--FINAL DE MODIFICACION DE  DATOS-->
+
+<!--MODALES DE NOTIFICACIONES-->
+
     <div aria-live="polite" aria-atomic="true">
         <div class="toast" id="toast" data-delay="2000" style="background-color:red; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
             <div class="toast-body">
@@ -115,6 +126,15 @@
         </div>
     </div>
 
+    <div aria-live="polite" aria-atomic="true">
+        <div class="toast" id="toastEliminar" data-delay="2000" style="background-color:green; position: absolute; top: 100px; right: 50px; border-radius:10rem; color:white;">
+            <div class="toast-body">
+                Datos Eliminados correctamente.
+            </div>
+        </div>
+    </div>
+
+<!--FIN DE LOS MODALES DE NOTIFICACIONES-->
     <?php
     include('config/config.php');
     $ci = $_POST['ci'];
@@ -136,8 +156,21 @@
             }
         }
     }
-    
+
   
+    ?>
+
+    <?php
+                    $valor = $_POST['id'];
+                    echo $valor;
+                    /**/
+                    include('config/config.php');
+                    $sql = "DELETE FROM proveedores WHERE ciNit = $valor";
+                    if($resul = $conexion->query($sql)){
+                        echo "<script>$('#toastEliminar').toast('show');</script>";
+                    }
+                    /*0$resul = $conexion->query($sql);*/
+                    echo "<script>$('#toastEliminar').toast('show');</script>";
     ?>
     <div>
         <table id="tabla" class="table  table-condensed">
@@ -162,12 +195,18 @@
                     <td><?php echo $ver[2] ?></td>
                     <td><?php echo $ver[3] ?></td>
                     <td>
+                    <form action="proveedores.php" method="post">
                         <button type="button" class="btnAcciones btn-success" data-toggle="modal" data-target="#exampleModalM">Editar</button>
                         <button type="button" class="btnAcciones btn-danger">Eliminar</button>
+                        <input type="hidden" name="id" value="<?php echo $ver[0]?>">
+                        <input type="submit" name="btnEliminar" value="Selecionar">
+                        <input type="submit" name="btnModificar" value="">
+                        </form>
                     </td>
                 </tr>
             <?php
             }
+
             ?>
         </table>
     </div>
