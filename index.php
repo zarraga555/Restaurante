@@ -37,7 +37,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4 text-title">Bienvenido</h1>
                   </div>
-                  <form class="user" method="post" action="index.php">
+                  <form class="user" method="post" action="config/login.php">
                     <div class="form-group">
                       <input type="text" name="txtusario" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Usuario">
                     </div>
@@ -74,31 +74,3 @@
 </body>
 
 </html>
-<?php
-include('config/config.php');
-session_start();
-$user = $_POST['txtusario'];
-$pass = $_POST['txtpassword'];
-$iniciar = $_POST['btniniciar'];
-
-if (isset($iniciar)) {
-  $sql = "SELECT * FROM usuarios WHERE User = '$user' AND Pass = '$pass'";
-  $ejecutar = $conexion->query($sql);
-  $fila = $ejecutar->fetch_row();
-
-  if (empty($user) || empty($pass)) {
-    echo "<script>$('#toast').toast('show');</script>";
-  } else if ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Administrador") {
-    $_SESSION['user']=$user;
-    header('location:admin.php');
-  } elseif ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Cajero") {
-    $_SESSION['user']=$user;
-    header('location:cajero.php');
-  } elseif ($fila[0] == $user && $fila[1] == $pass && $fila[2] == "Contador") {
-    $_SESSION['user']=$user;
-    header('location:contador.php');
-  } else {
-    echo "<script>('#toastError').toast('show');</script>";
-  }
-}
-?>

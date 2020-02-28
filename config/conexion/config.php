@@ -11,10 +11,10 @@
             return $ejecutar;
         }
     }
-    $obj = new conectar();
-    if($obj->conexion()){
-        echo "exito";
-    }else{
-        echo "no conectado";
-    }
+    // $obj = new conectar();
+    // if($obj->conexion()){
+    //     echo "exito";
+    // }else{
+    //     echo "no conectado";
+    // }
 ?>
